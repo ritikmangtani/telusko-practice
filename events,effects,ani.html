@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Events and Effects</title>
+    <link rel="stylesheet" href="style.css" </head> <body>
+    <p>Outside div</p>
+
+    <button id="btn1">Fade In</button>
+
+    <button id="btn2">Fade Out</button>
+
+    <button id="btn3">Toggle</button>
+
+    <button id="btn4">Animate</button>
+
+    <button id="chain">Chain</button>
+
+    <div class="section">
+        <h2>Hello world</h2>
+        <p>This world is a beautiful place</p>
+        <ul>
+            <li>Mars</li>
+            <li>Moon</li>
+            <li>Earth</li>
+        </ul>
+
+    </div>
+
+    <div id="div2">
+        <H2>There is no border here</H2>
+        <p>This is a div</p>
+
+    </div>
+
+    <ul>
+        <li>Mars</li>
+        <li>Moon</li>
+        <li>Earth</li>
+    </ul>
+
+    <div class="mycube">
+
+        <h1>MAGIXX</h1>
+
+    </div>
+
+
+
+
+    </body>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#btn1").click(function () {
+                $("div").slideDown(1000)
+            });
+
+            $("#btn2").click(function () {
+                $('div').slideUp(1000)
+            });
+
+
+            $("#btn3").click(function () {
+                $("div").slideToggle(1000)
+            });
+
+            $("#btn4").click(function () {
+
+                $(".mycube").animate({
+
+                    height: "250px",
+                    width: "250px",
+                    opacity: "1",
+                    left: "150px"
+
+                }, 1000, function () {
+                    alert("Animation done")
+                })
+            })
+
+            $("#chain").click(function () {
+                $("#div2").fadeOut(1000).fadeIn(1000).slideUp(1000).slideDown(1000)
+            })
+
+
+
+
+
+
+
+
+
+            // $("div").mouseover(fn3);
+
+            // $("div").mouseout(fn4);
+
+            // function fn3()
+            // {
+            //     $("div").fadeIn(100)
+            // }
+
+            // function fn4()
+            // {
+            //     $("div").fadeOut(100)
+            // }
+
+        })
+    </script>
+
+</html>

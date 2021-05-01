@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css" >
+</head>
+<body>
+
+    <button id="append">Append</button>
+    <button id="after">After</button>
+    <button id="prepend">Prepend</button>
+    <button id="before">Before</button>
+    <br>
+    <br>
+    <button id="remove">Remove</button>
+    <button id="empty">Empty</button>
+
+    <div id="div1" class="section">
+        <h1>This is the heading</h1>
+        <p class="para" id="p1">This is para 1</p>
+        <p class="para" id="p2">This is para 2</p>
+    </div>
+    
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+crossorigin="anonymous">
+</script>
+
+<script>
+    $(document).ready(function()
+    {
+        $("#append").click(function()
+        {
+            
+            $("#div1").append("<p>this para is appended</p>");
+        })
+
+
+        $("#after").click(function()
+        {
+            $("#div1").after("<p>this is after</p>")
+        })
+
+
+        $("#prepend").click(function()
+        {
+            $("#div1").prepend("<p>this para <i>is</i> prepended</p>")
+        })
+        
+        $("#before").click(function()
+        {
+            $("#div1").before("<p>this is before</p>")
+        })
+
+
+        //remove
+        $("#remove").click(function()
+        {
+            $("#div1").remove()  
+            //$("p").remove("#p2") here we only removed one element
+        })
+
+        //empty
+        $("#empty").click(function()
+        {
+            $("#div1").empty()
+        })
+
+    })
+
+</script>
+
+</html>

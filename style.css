@@ -1,0 +1,24 @@
+.section{
+    border: 2px solid brown;
+    border-radius:  10px;
+    padding: 5px;
+    margin: 3px;
+}
+
+.mycube{
+    background-color: coral;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    padding: 10px;
+    opacity: 0.3;
+    margin: 10px;
+    text-align: center;
+}
+
+.section-font{
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 30px;
+    background-color: chartreuse;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+        function validate() 
+        {
+            var username = document.getElementById("uname").value;
+            var regx = /^[7-9]\d{9}$/ ;
+            if (regx.test(username)) 
+            {
+                // alert("Valid");
+                document.getElementById("lbluser").innerHTML="valid";
+                document.getElementById("lbluser").style.visibility="visible"
+            }
+            else
+            {
+                document.getElementById("lbluser").style.visibility = "visible";
+                alert("Invalid");
+                
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <form>
+
+
+        <input id="uname" type="text" placeholder="Username">
+        <label id="lbluser" style="color :red ; visibility: hidden;">Invalid Input</label> <br><br>
+        <button onclick="validate()" type="button">Submit</button>
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function mouseOver()
+        {
+            document.getElementById("img1").src ="https://static01.nyt.com/images/2021/03/12/arts/11nft-auction-cryptopunks-print/11nft-auction-cryptopunks-print-articleLarge.jpg?quality=75&auto=webp&disable=upscale"
+        }
+
+        function mouseOut()
+        {
+            document.getElementById("img1").src="https://media.npr.org/assets/img/2021/03/05/nyancat-still-6cda3c8e01b3b5db14f6db31ce262161985fb564-s800-c85.png"
+        }
+    </script>
+
+</head>
+<body>
+    <img id="img1" onmouseover="mouseOver()" onmouseout="mouseOut()" style="width: 25%;" src="https://media.npr.org/assets/img/2021/03/05/nyancat-still-6cda3c8e01b3b5db14f6db31ce262161985fb564-s800-c85.png">
+</body>
+</html>

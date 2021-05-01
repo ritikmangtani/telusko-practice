@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn1">Get value</button>
+    <button id="btn2">Set value</button>
+    <div style="background-color: seashell;color: sienna;border: 1px solid green;" id="div1" class="class1">
+        <h1>Hello this is us</h1>
+        <p>This <b>not</b>is a <i>haha</i> paragraph</p>
+    </div>
+
+</body>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous">
+    </script>
+
+    <script>
+
+        $(document).ready(function()
+        {
+            //.attr()
+            $("#btn1").click(function()
+            {
+                alert($("#div1").attr("class"));
+            })
+
+
+            $("#btn2").click(function()
+            {
+                $("#div1").attr("class","class2");
+            })
+            
+            //.html()
+            // $("#btn1").click(function()
+            // {
+            //     $("#div1").html('This is <b>html</b>');
+            // })
+
+            //.text()
+            // $("#btn1").click(function()
+            // {
+            //     $("#div1").text('This is <b>html</b>');
+            // })
+            
+            
+            //.css
+            // $("#btn1").click(function()
+            // {
+            //     alert($("#div1").css("font-size"));
+            // })
+
+            // $("#btn2").click(function()
+            // {
+            //     $("#div1").css("font-size","50px");
+            // })
+        })
+
+    </script>
+
+</html>

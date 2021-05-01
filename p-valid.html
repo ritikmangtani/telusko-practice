@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate()
+        {
+            var uname = document.getElementById("uname");
+            var pass = document.getElementById("pass");
+
+            if(uname.value.trim()=="")
+            {
+                // alert("No username entered");
+                uname.style.border="solid 1px red";
+                document.getElementById("lbluser").style.visibility="visible";
+                return false;
+            }
+
+            else if(pass.value.trim()=="")
+            {
+                // alert("No password entered");
+                pass.style.border="solid 1px red";
+                document.getElementById("lblpass").style.visibility="visible";
+                return false;
+            }
+            else if(pass.value.trim().length>5=="")
+            {
+                alert("Password entered should have atleast 5 chars");
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <form onsubmit="return validate()" action="welcome.html">
+        <input id="uname" type="text" placeholder="Username">
+        <label id="lbluser" style="color :red ; visibility: hidden;" >Invalid Input</label> <br><br>
+        <input id="pass" type="password" placeholder="Password">
+        <label id="lblpass" style="color: red; visibility: hidden;"> Invalid input</label> <br><br>
+        <button type="submit">Submit</button>
+    </form>
+    
+</body>
+</html>
