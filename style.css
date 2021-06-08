@@ -22,3 +22,11 @@
     font-size: 30px;
     background-color: chartreuse;
 }
+
+.cube{
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+    display: inline-block;
+    margin: 2px;
+}

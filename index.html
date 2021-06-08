@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/jquery-ui-1.12.1/jquery-ui.css">
+    <link rel="stylesheet" href="/jquery-ui-1.12.1/jquery-ui.structure.css">
+    <link rel="stylesheet" href="/jquery-ui-1.12.1/jquery-ui.theme.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <input id="dateinput"><br>
+    <img id="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIpFCRRdZHY1rX25UDfGfQ2-7sZq_AX_oV5w&usqp=CAU"
+        title="NFT"><br><br>
+
+    <h1>Some usefel information for Ritik Mangtani in an Accordion</h1>
+    <div style="width: 250px; height: 500px;" id="panelsDiv">
+        <div id="panels">
+
+            <h2>Hydroponics Farming</h2>
+            <p>This is a method of farming without the use of soil and is very efficient</p>
+            <h2>The ritik mangtani show</h2>
+            <p>A show about everything under the sun. <br> The podcast will start with a little bit of my own story
+                moving on to interviews with small businesses and talk alot about many interesting topics.</p>
+            <h2>javascript</h2>
+            <p>One the way to become a pro at javascript</p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <button id="btn2">Open messagebox</button>
+    <div id="div2" title="Messagebox" class="section">This is a messagebox<br>
+        <img src="https://www.blockchain-expo.com/wp-content/uploads/2019/11/629795-cryptocurrency-thinkstock-120417.jpg"
+            alt="" style="height: 250px;width: 375px;">
+    </div>
+
+    <div style="padding: 5px; margin: 5px; border: 2px brown solid; border-radius: 2px;">
+        <label style="margin: 10px;"><b>City</b> : </label> <input placeholder="Eg : Mumbai" id="citySelect">
+    </div>
+
+    <!-- modifaction button -->
+    <button id="modification">Modify</button>
+    <button id="acOff">Autocomplete Off</button>
+
+
+    <!-- cubes -->
+    <div id="sort">
+        <div class="cube">
+            <h2>CUbe 1</h2>
+
+        </div>
+        <div class="cube">
+            <h2>CUBe 2</h2>
+        </div>
+        <div class="cube">
+            <h2>CUBe 3</h2>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous">
+</script>
+
+
+
+<script src="/jquery-ui-1.12.1/jquery-ui.js" type="text/javascript"></script>
+
+<script>
+    $(document).ready(function () {
+
+        //datepicker()
+        $("#dateinput").datepicker({
+            numberOfMonths: 2,
+            changeYear: true,
+            changeMonth: true,
+            showWeek: true,
+            weekHeader: "Wk no.",
+            showOtherMonths: true,
+            minDate: new Date(2015, 0, 1),
+            maxDate: new Date(2025, 11, 31)
+
+        })
+
+
+        //tooltip - cursor
+        $("#img1").tooltip({
+            content: "Hello World",
+            // track : true,
+            show: {
+                effect: "bounce",
+                duration: 4000
+            },
+            hide: {
+                effect: "blind",
+                duration: 4000
+            }
+        })
+
+
+
+        //accordion - drop down list
+        $("#panels").accordion({
+            collapsible: true,
+            // event :"mouseover",
+            animate: 1000,
+            active: 1,
+            heightStyle: true,
+            icons: {
+                header: "ui-icon-plus",
+                activeHeader: "ui-icon-minus"
+            } //not working
+        })
+
+
+
+
+
+        //messagebox
+        $("#btn2").click(function () {
+            $("#div2").dialog({
+                title: "Privacy Policy",
+                // draggable:false,
+                // resizable: false,
+                height: 300,
+                width: 300,
+                modal: true,
+
+                buttons: [{
+                        text: "Close",
+                        icon: "ui-icon-heart",
+                        click: function () {
+                            $(this).dialog("close")
+                        }
+                    },
+                    {
+                        text: "Okay",
+                        icon: "ui-icon-heart",
+                        click: function () {
+                            $(this).dialog("close")
+                        }
+                    }
+                ]
+
+            })
+        })
+
+
+        //autocomplete()
+        var cityList = ["Mumbai", "Delhi", "Bangalore", "Hyderabad", "Gandhinagar", "Ahmedabad", "Dehradun",
+            "Manali",
+        ];
+
+
+        $("#citySelect").autocomplete({
+            source: cityList
+        }, {
+            autoFocus: true,
+            // delay:1000,
+            minLength: 1
+        })
+
+        //Widget modifications
+        $("#modification").click(function () {
+            $("#panels").accordion("option", "active", 2)
+
+            //check
+            $("#acOff").click(function () {
+                // alert()
+                $("#citySelect").autocomplete("option", "minLength", 3)
+            })
+        })
+
+        //draggable
+        $("#panelsDiv").draggable({
+            // axis:"y",
+            // axis:"x",
+            cursor:"grabbing",
+            opacity:0.4,
+            grid:[30,30],
+            snap:true, //for snapping 2 draggable elems(joining together)
+            snapTolerance:100
+        })
+
+        //sortable
+        $("#sort").sortable({
+            opacity: 0.5,
+            distance: 10,
+            delay: 100,
+            containment: "parent",
+            cursor:"grabbing",
+            // axis:"x"
+        })
+            
+        //resizeable()
+        $("#img1").resizable({
+            maxWidth: 500,
+            maxHeight: 300,
+            autoHide:true, //little icon shown for resizing
+            // distance: 200, only after 200 image will resize
+            aspectRatio:true,
+            ghost:true
+            
+        })
+        
+
+
+
+
+    })
+</script>
+
+</html>
+
+<link rel="stylessheet" href="/jquery-ui-1.12.1/jquery-ui.css">
+<link rel="stylessheet" href="/jquery-ui-1.12.1/jquery-ui.structure.css">
+<link rel="stylessheet" href="/jquery-ui-1.12.1/jquery-ui.theme.css">
